@@ -13,17 +13,22 @@ class Solution {
         if(head == null || head.next == null){
             return head;
         }
-        ListNode prevNode = null;
-        ListNode currentNode = head;
+        // ListNode prevNode = null;
+        // ListNode currentNode = head;
         
-        while(currentNode != null){
-            ListNode nextNode = currentNode.next;
-            currentNode.next = prevNode;
+        // while(currentNode != null){
+        //     ListNode nextNode = currentNode.next;
+        //     currentNode.next = prevNode;
 
-            prevNode = currentNode;
-            currentNode = nextNode;
-        }
-        head = prevNode;
-        return head;
+        //     prevNode = currentNode;
+        //     currentNode = nextNode;
+        // }
+        // head = prevNode;
+        // return head;
+
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 }
