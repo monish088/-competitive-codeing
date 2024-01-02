@@ -12,7 +12,7 @@ class Solution {
             currentMax = Math.max(nums[i], currentMax * nums[i]);
             currentMin = Math.min(nums[i], currentMin * nums[i]);
 
-             max_prd = Math.max(max_prd, currentMax);
+            max_prd = Math.max(max_prd, currentMax);
         }
         return max_prd;
     }
