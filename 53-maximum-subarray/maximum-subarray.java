@@ -3,7 +3,7 @@ class Solution {
         int max = Integer.MIN_VALUE, curr = 0;
         for(int i = 0; i < nums.length; i++){
             curr = curr + nums[i];
-           max = Math.max(max,curr);
+            max = Math.max(max,curr);
             if(curr < 0)
                 curr = 0;
             
