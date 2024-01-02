@@ -6,7 +6,7 @@ class Solution {
         //     max = Math.max(max,curr);
         //     if(curr < 0)
         //         curr = 0;
-            
+             
         // }
         // return max;
          int maxSum = Integer.MIN_VALUE, currentSum = 0;
@@ -16,6 +16,6 @@ class Solution {
             maxSum = Math.max(maxSum, currentSum);
         }
 
-        return maxSum;
+         return maxSum;
     }
 }
