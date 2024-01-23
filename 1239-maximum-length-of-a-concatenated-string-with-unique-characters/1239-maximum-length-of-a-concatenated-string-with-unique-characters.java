@@ -35,7 +35,7 @@ class Solution {
         int include = 0;
         int exclude = 0;
 
-        if(hasDuplicate(temp,arr.get(i))){
+        if(hasDuplicate(arr.get(i),temp)){
             exclude = solve(i+1, arr,temp,n);
         } else{
             exclude = solve(i+1,arr,temp,n);
