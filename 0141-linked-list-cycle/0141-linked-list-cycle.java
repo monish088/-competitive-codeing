@@ -22,9 +22,11 @@ public class Solution {
             if(slow == null){
                 return false;
             }
+            slow = slow.next;
             if(fast.next == null){
                 return false;
             }
+            fast = fast.next.next;
             if(slow == fast){
                 return true;
             }
