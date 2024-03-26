@@ -7,20 +7,18 @@ class Solution {
             } else if(!st.isEmpty()&&(s.charAt(i)=='}'||s.charAt(i)==')'||s.charAt(i)==']')){
                 if(s.charAt(i)=='}' && st.peek()=='{'){
                     st.pop();
-                } else if(s.charAt(i)==')' && st.peek()=='('){
+                }else if(s.charAt(i)==')' && st.peek()=='('){
                     st.pop();
-                } else if(s.charAt(i)==']' && st.peek()=='['){
+                }else if(s.charAt(i)==']' && st.peek()=='['){
                     st.pop();
             } else{
                 return false;
             }
-            } else{
-                return false;
-            }
-            
+        } else {
+            return false;
         }
 
-         return(st.isEmpty());
     }
-   
+    return (st.isEmpty());
+}
 }
