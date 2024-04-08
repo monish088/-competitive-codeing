@@ -1,37 +1,37 @@
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class Solution {
     public ListNode reverseBetween(ListNode head, int left, int right) {
-      // Create a dummy node to serve as the predecessor of the original list
-    ListNode dummy = new ListNode(0);
-    dummy.next = head;
-    ListNode prev = dummy;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
 
-    // Move prev to the node before the sublist to be reversed
-    for (int i = 0; i < left - 1; i++) {
-        prev = prev.next;
-    }
+        ListNode leftPre = dummy;
+        ListNode currNode = head;
 
-    // Initialize pointers for reversing the sublist
-    ListNode current = prev.next;
-    ListNode nextNode;
+        for(int i = 0; i < left - 1; i++){
+            leftPre = leftPre.next;
+            currNode = currNode.next;
+        }
+        ListNode subHead = currNode;
+        ListNode prev = null;
 
-    // Reverse the sublist from left to right
-    for (int i = 0; i < right - left; i++) {
-        nextNode = current.next;
-        current.next = nextNode.next;
-        nextNode.next = prev.next;
-        prev.next = nextNode;
-    }
+        for(int i = 0; i <= right - left; i++){
+            ListNode nextNode = currNode.next;
+            currNode.next = prev;
+            prev = currNode;
+            currNode = nextNode;
+        }
+        leftPre.next = prev;
+        subHead.next = currNode;
 
-    return dummy.next;
+        return dummy.next;
     }
 }
